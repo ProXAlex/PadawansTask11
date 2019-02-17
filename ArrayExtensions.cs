@@ -10,9 +10,8 @@ namespace PadawansTask11
                 throw new ArgumentNullException();
             if (accuracy < 0 || accuracy > 1)
                 throw new ArgumentException();
-            int count = 0;
-            while (accuracy * Math.Pow(10, 1 + count) % 10 != 0)
-                count++;
+
+            int count = BitConverter.GetBytes(decimal.GetBits((decimal)accuracy)[3])[2];
 
             for (int i = 0; i < array.Length; i++)
             {

@@ -8,7 +8,8 @@ namespace PadawansTask11
         {
             if (array == null)
                 throw new ArgumentNullException();
-
+            if (accuracy < 0 || accuracy > 1)
+                throw new ArgumentException();
             int count = 0;
             while (accuracy * Math.Pow(10, 1 + count) % 10 != 0)
                 count++;
